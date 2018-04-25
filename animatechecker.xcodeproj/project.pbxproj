@@ -30,7 +30,9 @@
 		392B364E20907B37000F0F0A /* red_mouse.png in Resources */ = {isa = PBXBuildFile; fileRef = 392B363D20907B36000F0F0A /* red_mouse.png */; };
 		392B364F20907B37000F0F0A /* red_tiger.png in Resources */ = {isa = PBXBuildFile; fileRef = 392B363E20907B36000F0F0A /* red_tiger.png */; };
 		392B365020907B37000F0F0A /* red_wolf.png in Resources */ = {isa = PBXBuildFile; fileRef = 392B363F20907B36000F0F0A /* red_wolf.png */; };
-		392B365520907FD8000F0F0A /* Pieces.m in Sources */ = {isa = PBXBuildFile; fileRef = 392B365420907FD8000F0F0A /* Pieces.m */; };
+		392B365520907FD8000F0F0A /* ChessPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = 392B365420907FD8000F0F0A /* ChessPiece.m */; };
+		392B3658209082B4000F0F0A /* Animates.m in Sources */ = {isa = PBXBuildFile; fileRef = 392B3657209082B4000F0F0A /* Animates.m */; };
+		392B365B209085CC000F0F0A /* ChessPieceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 392B365A209085CC000F0F0A /* ChessPieceModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,8 +63,12 @@
 		392B363D20907B36000F0F0A /* red_mouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_mouse.png; sourceTree = "<group>"; };
 		392B363E20907B36000F0F0A /* red_tiger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_tiger.png; sourceTree = "<group>"; };
 		392B363F20907B36000F0F0A /* red_wolf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_wolf.png; sourceTree = "<group>"; };
-		392B365320907FD8000F0F0A /* Pieces.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pieces.h; sourceTree = "<group>"; };
-		392B365420907FD8000F0F0A /* Pieces.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pieces.m; sourceTree = "<group>"; };
+		392B365320907FD8000F0F0A /* ChessPiece.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChessPiece.h; sourceTree = "<group>"; };
+		392B365420907FD8000F0F0A /* ChessPiece.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChessPiece.m; sourceTree = "<group>"; };
+		392B3656209082B4000F0F0A /* Animates.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Animates.h; sourceTree = "<group>"; };
+		392B3657209082B4000F0F0A /* Animates.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Animates.m; sourceTree = "<group>"; };
+		392B3659209085CC000F0F0A /* ChessPieceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChessPieceModel.h; sourceTree = "<group>"; };
+		392B365A209085CC000F0F0A /* ChessPieceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChessPieceModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +152,10 @@
 		392B365120907D15000F0F0A /* models */ = {
 			isa = PBXGroup;
 			children = (
+				392B3656209082B4000F0F0A /* Animates.h */,
+				392B3657209082B4000F0F0A /* Animates.m */,
+				392B3659209085CC000F0F0A /* ChessPieceModel.h */,
+				392B365A209085CC000F0F0A /* ChessPieceModel.m */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -153,8 +163,8 @@
 		392B365220907D1C000F0F0A /* views */ = {
 			isa = PBXGroup;
 			children = (
-				392B365320907FD8000F0F0A /* Pieces.h */,
-				392B365420907FD8000F0F0A /* Pieces.m */,
+				392B365320907FD8000F0F0A /* ChessPiece.h */,
+				392B365420907FD8000F0F0A /* ChessPiece.m */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -247,8 +257,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				392B365520907FD8000F0F0A /* Pieces.m in Sources */,
+				392B3658209082B4000F0F0A /* Animates.m in Sources */,
+				392B365520907FD8000F0F0A /* ChessPiece.m in Sources */,
 				392B361C2090782D000F0F0A /* ViewController.m in Sources */,
+				392B365B209085CC000F0F0A /* ChessPieceModel.m in Sources */,
 				392B36272090782D000F0F0A /* main.m in Sources */,
 				392B36192090782D000F0F0A /* AppDelegate.m in Sources */,
 			);
