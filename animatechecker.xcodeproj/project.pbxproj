@@ -31,8 +31,8 @@
 		392B364F20907B37000F0F0A /* red_tiger.png in Resources */ = {isa = PBXBuildFile; fileRef = 392B363E20907B36000F0F0A /* red_tiger.png */; };
 		392B365020907B37000F0F0A /* red_wolf.png in Resources */ = {isa = PBXBuildFile; fileRef = 392B363F20907B36000F0F0A /* red_wolf.png */; };
 		392B365520907FD8000F0F0A /* ChessPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = 392B365420907FD8000F0F0A /* ChessPiece.m */; };
-		392B3661209091E9000F0F0A /* Animates.m in Sources */ = {isa = PBXBuildFile; fileRef = 392B365E209091E9000F0F0A /* Animates.m */; };
-		392B3662209091E9000F0F0A /* ChessPieceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 392B3660209091E9000F0F0A /* ChessPieceModel.m */; };
+		392B366720917E5C000F0F0A /* ChessPieceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 392B366520917E5B000F0F0A /* ChessPieceModel.m */; };
+		392B366820917E5C000F0F0A /* Animates.m in Sources */ = {isa = PBXBuildFile; fileRef = 392B366620917E5C000F0F0A /* Animates.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,10 +65,10 @@
 		392B363F20907B36000F0F0A /* red_wolf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_wolf.png; sourceTree = "<group>"; };
 		392B365320907FD8000F0F0A /* ChessPiece.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChessPiece.h; sourceTree = "<group>"; };
 		392B365420907FD8000F0F0A /* ChessPiece.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChessPiece.m; sourceTree = "<group>"; };
-		392B365D209091E9000F0F0A /* Animates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animates.h; sourceTree = "<group>"; };
-		392B365E209091E9000F0F0A /* Animates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animates.m; sourceTree = "<group>"; };
-		392B365F209091E9000F0F0A /* ChessPieceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessPieceModel.h; sourceTree = "<group>"; };
-		392B3660209091E9000F0F0A /* ChessPieceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessPieceModel.m; sourceTree = "<group>"; };
+		392B366320917E5A000F0F0A /* ChessPieceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessPieceModel.h; sourceTree = "<group>"; };
+		392B366420917E5B000F0F0A /* Animates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animates.h; sourceTree = "<group>"; };
+		392B366520917E5B000F0F0A /* ChessPieceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessPieceModel.m; sourceTree = "<group>"; };
+		392B366620917E5C000F0F0A /* Animates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animates.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +101,10 @@
 		392B36162090782D000F0F0A /* animatechecker */ = {
 			isa = PBXGroup;
 			children = (
-				392B365C209091E9000F0F0A /* models */,
+				392B366420917E5B000F0F0A /* Animates.h */,
+				392B366620917E5C000F0F0A /* Animates.m */,
+				392B366320917E5A000F0F0A /* ChessPieceModel.h */,
+				392B366520917E5B000F0F0A /* ChessPieceModel.m */,
 				392B365220907D1C000F0F0A /* views */,
 				392B362D20907B36000F0F0A /* resource */,
 				392B36172090782D000F0F0A /* AppDelegate.h */,
@@ -156,17 +159,6 @@
 				392B365420907FD8000F0F0A /* ChessPiece.m */,
 			);
 			path = views;
-			sourceTree = "<group>";
-		};
-		392B365C209091E9000F0F0A /* models */ = {
-			isa = PBXGroup;
-			children = (
-				392B365D209091E9000F0F0A /* Animates.h */,
-				392B365E209091E9000F0F0A /* Animates.m */,
-				392B365F209091E9000F0F0A /* ChessPieceModel.h */,
-				392B3660209091E9000F0F0A /* ChessPieceModel.m */,
-			);
-			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,10 +249,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				392B3661209091E9000F0F0A /* Animates.m in Sources */,
 				392B365520907FD8000F0F0A /* ChessPiece.m in Sources */,
+				392B366720917E5C000F0F0A /* ChessPieceModel.m in Sources */,
 				392B361C2090782D000F0F0A /* ViewController.m in Sources */,
-				392B3662209091E9000F0F0A /* ChessPieceModel.m in Sources */,
+				392B366820917E5C000F0F0A /* Animates.m in Sources */,
 				392B36272090782D000F0F0A /* main.m in Sources */,
 				392B36192090782D000F0F0A /* AppDelegate.m in Sources */,
 			);
