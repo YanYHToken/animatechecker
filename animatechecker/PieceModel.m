@@ -73,4 +73,14 @@
     _img_name = img_name;
     self.img = [UIImage imageNamed:img_name];
 }
+
+- (int)chess_piece_index
+{
+    if(_chess_piece_index > 8)
+    {
+        return _chess_piece_index - 8;
+    }
+    return _chess_piece_index;
+}
+
 @end

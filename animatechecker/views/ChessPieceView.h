@@ -15,4 +15,10 @@
 
 - (instancetype)initWithModel:(PieceModel *)model;
 
+- (NSString *)animal;
+
+- (BOOL)team;
+
+- (int)chess_piece_index;
+
 @end
