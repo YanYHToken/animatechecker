@@ -6,9 +6,9 @@
 //  Copyright © 2018年 qwater. All rights reserved.
 //
 
-#import "Animates.h"
+#import "AnimateDatas.h"
 
-@implementation Animates
+@implementation AnimateDatas
 
 + (NSString *)MOUSE
 {
@@ -54,7 +54,7 @@
 + (NSArray<NSString *> *)animates
 {
     static NSArray<NSString *> *datas;
-    if(!datas)datas = @[[Animates MOUSE], [Animates CAT], [Animates WOLF], [Animates DOG], [Animates LEOPARD], [Animates TIGER], [Animates LION], [Animates ELEPHANT]];
+    if(!datas)datas = @[[AnimateDatas MOUSE], [AnimateDatas CAT], [AnimateDatas WOLF], [AnimateDatas DOG], [AnimateDatas LEOPARD], [AnimateDatas TIGER], [AnimateDatas LION], [AnimateDatas ELEPHANT]];
     return datas;
 }
 

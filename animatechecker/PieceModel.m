@@ -6,17 +6,17 @@
 //  Copyright © 2018年 qwater. All rights reserved.
 //
 
-#import "ChessPieceModel.h"
+#import "PieceModel.h"
 
-@implementation ChessPieceModel
+@implementation PieceModel
 
-+ (ChessPieceModel *)modelWith:(NSString *)img_name
++ (PieceModel *)modelWith:(NSString *)img_name
                         animal:(NSString *)animal
              chess_piece_index:(int)chess_piece_index
                      col_index:(int)col_index
                      row_index:(int)row_index
 {
-    ChessPieceModel *model = [[ChessPieceModel alloc] init];
+    PieceModel *model = [[PieceModel alloc] init];
     model.img_name = img_name;
     model.animal = animal;
     model.row_index = row_index;

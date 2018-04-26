@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-@interface ChessPieceModel : NSObject
+@interface PieceModel : NSObject
 
 @property(nonatomic, assign, readonly)BOOL alive;
 
@@ -28,7 +28,7 @@
 
 @property(nonatomic, strong)UIImage *img;
 
-+ (ChessPieceModel *)modelWith:(NSString *)img_name
++ (PieceModel *)modelWith:(NSString *)img_name
                         animal:(NSString *)animal
              chess_piece_index:(int)chess_piece_index
                      col_index:(int)col_index

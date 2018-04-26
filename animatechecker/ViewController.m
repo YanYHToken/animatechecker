@@ -7,13 +7,13 @@
 //
 
 #import "ViewController.h"
-#import "ChessPieceModel.h"
-#import "Animates.h"
-#import "ChessPiece.h"
+#import "PieceModel.h"
+#import "AnimateDatas.h"
+#import "ChessPieceView.h"
 
 @interface ViewController ()
 @property(nonatomic, strong)NSArray *frames;
-@property(nonatomic, strong)NSMutableArray<ChessPieceModel *> *chessPieceModels;
+@property(nonatomic, strong)NSMutableArray<PieceModel *> *chessPieceModels;
 @property(nonatomic, strong)UIImageView *game_board_view;
 @end
 
@@ -65,26 +65,26 @@
 
 - (void)createPieces
 {
-    [self createChessPieceModel:@"black_lion" animal:[Animates LION] chess_piece_index:BLACK_LION col_index:0 row_index:0];
-    [self createChessPieceModel:@"black_tiger" animal:[Animates TIGER] chess_piece_index:BLACK_TIGER col_index:6 row_index:0];
-    [self createChessPieceModel:@"black_dog" animal:[Animates DOG] chess_piece_index:BLACK_DOG col_index:1 row_index:1];
-    [self createChessPieceModel:@"black_cat" animal:[Animates CAT] chess_piece_index:BLACK_CAT col_index:5 row_index:1];
-    [self createChessPieceModel:@"black_mouse" animal:[Animates MOUSE] chess_piece_index:BLACK_MOUSE col_index:0 row_index:2];
-    [self createChessPieceModel:@"black_leopard" animal:[Animates LEOPARD] chess_piece_index:BLACK_LEOPARD col_index:2 row_index:2];
-    [self createChessPieceModel:@"black_wolf" animal:[Animates WOLF] chess_piece_index:BLACK_WOLF col_index:4 row_index:2];
-    [self createChessPieceModel:@"black_elephant" animal:[Animates ELEPHANT] chess_piece_index:BLACK_ELEPHANT col_index:6 row_index:2];
+    [self createChessPieceModel:@"black_lion" animal:[AnimateDatas LION] chess_piece_index:BLACK_LION col_index:0 row_index:0];
+    [self createChessPieceModel:@"black_tiger" animal:[AnimateDatas TIGER] chess_piece_index:BLACK_TIGER col_index:6 row_index:0];
+    [self createChessPieceModel:@"black_dog" animal:[AnimateDatas DOG] chess_piece_index:BLACK_DOG col_index:1 row_index:1];
+    [self createChessPieceModel:@"black_cat" animal:[AnimateDatas CAT] chess_piece_index:BLACK_CAT col_index:5 row_index:1];
+    [self createChessPieceModel:@"black_mouse" animal:[AnimateDatas MOUSE] chess_piece_index:BLACK_MOUSE col_index:0 row_index:2];
+    [self createChessPieceModel:@"black_leopard" animal:[AnimateDatas LEOPARD] chess_piece_index:BLACK_LEOPARD col_index:2 row_index:2];
+    [self createChessPieceModel:@"black_wolf" animal:[AnimateDatas WOLF] chess_piece_index:BLACK_WOLF col_index:4 row_index:2];
+    [self createChessPieceModel:@"black_elephant" animal:[AnimateDatas ELEPHANT] chess_piece_index:BLACK_ELEPHANT col_index:6 row_index:2];
     
     
-    [self createChessPieceModel:@"red_lion" animal:[Animates LION] chess_piece_index:RED_LION col_index:6 row_index:8];
-    [self createChessPieceModel:@"red_tiger" animal:[Animates TIGER] chess_piece_index:RED_TIGER col_index:0 row_index:8];
-    [self createChessPieceModel:@"red_dog" animal:[Animates DOG] chess_piece_index:RED_DOG col_index:5 row_index:7];
-    [self createChessPieceModel:@"red_cat" animal:[Animates CAT] chess_piece_index:RED_CAT col_index:1 row_index:7];
-    [self createChessPieceModel:@"red_mouse" animal:[Animates MOUSE] chess_piece_index:RED_MOUSE col_index:6 row_index:6];
-    [self createChessPieceModel:@"red_leopard" animal:[Animates LEOPARD] chess_piece_index:RED_LEOPARD col_index:4 row_index:6];
-    [self createChessPieceModel:@"red_wolf" animal:[Animates WOLF] chess_piece_index:RED_WOLF col_index:2 row_index:6];
-    [self createChessPieceModel:@"red_elephant" animal:[Animates ELEPHANT] chess_piece_index:RED_ELEPHANT col_index:0 row_index:6];
-    for (ChessPieceModel *model in self.chessPieceModels) {
-        ChessPiece *btn = [[ChessPiece alloc] initWithModel:model];
+    [self createChessPieceModel:@"red_lion" animal:[AnimateDatas LION] chess_piece_index:RED_LION col_index:6 row_index:8];
+    [self createChessPieceModel:@"red_tiger" animal:[AnimateDatas TIGER] chess_piece_index:RED_TIGER col_index:0 row_index:8];
+    [self createChessPieceModel:@"red_dog" animal:[AnimateDatas DOG] chess_piece_index:RED_DOG col_index:5 row_index:7];
+    [self createChessPieceModel:@"red_cat" animal:[AnimateDatas CAT] chess_piece_index:RED_CAT col_index:1 row_index:7];
+    [self createChessPieceModel:@"red_mouse" animal:[AnimateDatas MOUSE] chess_piece_index:RED_MOUSE col_index:6 row_index:6];
+    [self createChessPieceModel:@"red_leopard" animal:[AnimateDatas LEOPARD] chess_piece_index:RED_LEOPARD col_index:4 row_index:6];
+    [self createChessPieceModel:@"red_wolf" animal:[AnimateDatas WOLF] chess_piece_index:RED_WOLF col_index:2 row_index:6];
+    [self createChessPieceModel:@"red_elephant" animal:[AnimateDatas ELEPHANT] chess_piece_index:RED_ELEPHANT col_index:0 row_index:6];
+    for (PieceModel *model in self.chessPieceModels) {
+        ChessPieceView *btn = [[ChessPieceView alloc] initWithModel:model];
         [self.game_board_view addSubview:btn];
         btn.frame = model.frame;
     }
@@ -96,7 +96,7 @@
                     col_index:(int)col_index
                     row_index:(int)row_index
 {
-    ChessPieceModel *model = [ChessPieceModel modelWith:img_name
+    PieceModel *model = [PieceModel modelWith:img_name
                                                  animal:animal
                                       chess_piece_index:chess_piece_index
                                               col_index:col_index

@@ -26,7 +26,7 @@ static const int BLACK_TIGER = 13;
 static const int BLACK_LION = 14;
 static const int BLACK_ELEPHANT = 15;
 
-@interface Animates : NSObject
+@interface AnimateDatas : NSObject
 
 //象、狮、虎、豹、狼、狗、猫；
 + (NSString *)MOUSE;

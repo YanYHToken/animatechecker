@@ -30,7 +30,9 @@
 		392B364E20907B37000F0F0A /* red_mouse.png in Resources */ = {isa = PBXBuildFile; fileRef = 392B363D20907B36000F0F0A /* red_mouse.png */; };
 		392B364F20907B37000F0F0A /* red_tiger.png in Resources */ = {isa = PBXBuildFile; fileRef = 392B363E20907B36000F0F0A /* red_tiger.png */; };
 		392B365020907B37000F0F0A /* red_wolf.png in Resources */ = {isa = PBXBuildFile; fileRef = 392B363F20907B36000F0F0A /* red_wolf.png */; };
-		392B365520907FD8000F0F0A /* ChessPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = 392B365420907FD8000F0F0A /* ChessPiece.m */; };
+		392B365520907FD8000F0F0A /* ChessPieceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 392B365420907FD8000F0F0A /* ChessPieceView.m */; };
+		392B366D20917EE4000F0F0A /* PieceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 392B366B20917EE4000F0F0A /* PieceModel.m */; };
+		392B366E20917EE4000F0F0A /* AnimateDatas.m in Sources */ = {isa = PBXBuildFile; fileRef = 392B366C20917EE4000F0F0A /* AnimateDatas.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,8 +63,12 @@
 		392B363D20907B36000F0F0A /* red_mouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_mouse.png; sourceTree = "<group>"; };
 		392B363E20907B36000F0F0A /* red_tiger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_tiger.png; sourceTree = "<group>"; };
 		392B363F20907B36000F0F0A /* red_wolf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_wolf.png; sourceTree = "<group>"; };
-		392B365320907FD8000F0F0A /* ChessPiece.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChessPiece.h; sourceTree = "<group>"; };
-		392B365420907FD8000F0F0A /* ChessPiece.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChessPiece.m; sourceTree = "<group>"; };
+		392B365320907FD8000F0F0A /* ChessPieceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChessPieceView.h; sourceTree = "<group>"; };
+		392B365420907FD8000F0F0A /* ChessPieceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChessPieceView.m; sourceTree = "<group>"; };
+		392B366920917EE4000F0F0A /* PieceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieceModel.h; sourceTree = "<group>"; };
+		392B366A20917EE4000F0F0A /* AnimateDatas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimateDatas.h; sourceTree = "<group>"; };
+		392B366B20917EE4000F0F0A /* PieceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieceModel.m; sourceTree = "<group>"; };
+		392B366C20917EE4000F0F0A /* AnimateDatas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimateDatas.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +101,10 @@
 		392B36162090782D000F0F0A /* animatechecker */ = {
 			isa = PBXGroup;
 			children = (
+				392B366A20917EE4000F0F0A /* AnimateDatas.h */,
+				392B366C20917EE4000F0F0A /* AnimateDatas.m */,
+				392B366920917EE4000F0F0A /* PieceModel.h */,
+				392B366B20917EE4000F0F0A /* PieceModel.m */,
 				392B365220907D1C000F0F0A /* views */,
 				392B362D20907B36000F0F0A /* resource */,
 				392B36172090782D000F0F0A /* AppDelegate.h */,
@@ -145,8 +155,8 @@
 		392B365220907D1C000F0F0A /* views */ = {
 			isa = PBXGroup;
 			children = (
-				392B365320907FD8000F0F0A /* ChessPiece.h */,
-				392B365420907FD8000F0F0A /* ChessPiece.m */,
+				392B365320907FD8000F0F0A /* ChessPieceView.h */,
+				392B365420907FD8000F0F0A /* ChessPieceView.m */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -239,8 +249,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				392B365520907FD8000F0F0A /* ChessPiece.m in Sources */,
+				392B365520907FD8000F0F0A /* ChessPieceView.m in Sources */,
+				392B366D20917EE4000F0F0A /* PieceModel.m in Sources */,
 				392B361C2090782D000F0F0A /* ViewController.m in Sources */,
+				392B366E20917EE4000F0F0A /* AnimateDatas.m in Sources */,
 				392B36272090782D000F0F0A /* main.m in Sources */,
 				392B36192090782D000F0F0A /* AppDelegate.m in Sources */,
 			);

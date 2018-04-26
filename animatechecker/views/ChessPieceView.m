@@ -6,11 +6,11 @@
 //  Copyright © 2018年 qwater. All rights reserved.
 //
 
-#import "ChessPiece.h"
+#import "ChessPieceView.h"
 
-@implementation ChessPiece
+@implementation ChessPieceView
 
-- (instancetype)initWithModel:(ChessPieceModel *)model
+- (instancetype)initWithModel:(PieceModel *)model
 {
     self = [super init];
     if(self)
