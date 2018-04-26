@@ -10,17 +10,50 @@
 
 @implementation ChessPieceModel
 
++ (ChessPieceModel *)modelWith:(NSString *)img_name
+                        animal:(NSString *)animal
+             chess_piece_index:(int)chess_piece_index
+                     col_index:(int)col_index
+                     row_index:(int)row_index
+{
+    ChessPieceModel *model = [[ChessPieceModel alloc] init];
+    model.img_name = img_name;
+    model.animal = animal;
+    model.row_index = row_index;
+    model.col_index = col_index;
+    model.chess_piece_index = chess_piece_index;
+    model.team = model.chess_piece_index < 8;
+    NSLog(@"%@ was create", img_name);
+    return model;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if(self)
+    {
+        _alive = YES;
+    }
+    return self;
+}
+
+
+- (void)piecePosition:(NSValue *)value
+{
+    self.frame = value.CGRectValue;
+}
+
 - (void)capture
 {
-    self.alive = false;
+    _alive = NO;
 }
 
 - (void)revive
 {
-    self.alive = true;
+    _alive = YES;
 }
 
-- (NSString *)animate_name
+- (NSString *)description
 {
     NSString *name = [self.animal lowercaseString];
     

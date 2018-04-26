@@ -16,6 +16,9 @@
     if(self)
     {
         self.model = model;
+        [self setImage:model.img forState:UIControlStateNormal];
+        [self setImage:model.img forState:UIControlStateHighlighted];
+        [self setImageEdgeInsets:UIEdgeInsetsMake(5, 5, 5, 5)];
     }
     return self;
 }
