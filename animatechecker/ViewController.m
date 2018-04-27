@@ -10,12 +10,12 @@
 #import "PieceModel.h"
 #import "AnimateDatas.h"
 
-@interface ViewController ()
+@interface ViewController ()<UIAlertViewDelegate>
 @property(nonatomic, strong)NSMutableArray *all_chess;
 @property(nonatomic, strong)UIImageView *game_board_view;
 @property(nonatomic, assign)CGFloat item_width;
 @property(nonatomic, assign)CGFloat item_height;
-@property(nonatomic, assign)BOOL red_in_turn;
+@property(nonatomic, assign)Team play_team;
 @property(nonatomic, assign)int selected_x_index;
 @property(nonatomic, assign)int selected_y_index;
 @end
@@ -24,9 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.selected_x_index = -1;
-    self.selected_y_index = -1;
-    self.red_in_turn = YES;
+   
     UIImage *game_bg = [UIImage imageNamed:@"board"];
     self.game_board_view = [[UIImageView alloc] initWithImage:game_bg];
     [self.view addSubview:self.game_board_view];
@@ -39,8 +37,17 @@
     self.game_board_view.userInteractionEnabled = YES;
     UITapGestureRecognizer* singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
     [self.game_board_view addGestureRecognizer:singleTap];
-    self.all_chess = [self chessInBoard:self.game_board_view.bounds];
-    [self createPieces];
+    [self reset];
+    
+    UIButton *button = [[UIButton alloc] init];
+    [button setTitle:@"重新开始" forState:UIControlStateNormal];
+    [button setTitle:@"重新开始" forState:UIControlStateHighlighted];
+    [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];
+    button.titleLabel.font = [UIFont systemFontOfSize:15];
+    [self.view addSubview:button];
+    button.frame = CGRectMake((self.view.frame.size.width-100)/2, 30, 100, 30);
+    [button addTarget:self action:@selector(reset) forControlEvents:UIControlEventTouchUpInside];
 }
 
 
@@ -59,7 +66,7 @@
         PieceModel *cur = self.all_chess[x_index][y_index];
         if(self.selected_x_index == -1 && self.selected_y_index == -1)
         {
-            if(self.red_in_turn == [cur team] && [cur alive])
+            if(self.play_team == [cur team] && [cur alive])
             {
                 NSLog(@"selection in x_index = %i y_index = %i", x_index, y_index);
                 self.selected_x_index = x_index;
@@ -89,7 +96,8 @@
                         NSLog(@"move this square success!!!!!!");
                         self.selected_x_index = -1;
                         self.selected_y_index = -1;
-                        self.red_in_turn = !self.red_in_turn;
+                        if(self.play_team == Black_Team)self.play_team = Red_Team;
+                        else if(self.play_team == Red_Team)self.play_team = Black_Team;
                     }
                     else
                     {
@@ -122,6 +130,7 @@
             model.frame = frame;
             model.y_index = y_index;
             model.x_index = x_index;
+            model.team = Unknow_Team;
             [x_values addObject:model];
         }
         [all_values addObject:x_values];
@@ -135,12 +144,12 @@
 {
     [self configPieceDatas:@"black_lion" animal:[AnimateDatas LION] chess_piece_index:BLACK_LION x_index:0 y_index:0];
     [self configPieceDatas:@"black_tiger" animal:[AnimateDatas TIGER] chess_piece_index:BLACK_TIGER x_index:6 y_index:0];
-    [self configPieceDatas:@"black_dog" animal:[AnimateDatas DOG] chess_piece_index:BLACK_DOG x_index:1 y_index:1];
-    [self configPieceDatas:@"black_cat" animal:[AnimateDatas CAT] chess_piece_index:BLACK_CAT x_index:5 y_index:1];
-    [self configPieceDatas:@"black_mouse" animal:[AnimateDatas MOUSE] chess_piece_index:BLACK_MOUSE x_index:0 y_index:2];
-    [self configPieceDatas:@"black_leopard" animal:[AnimateDatas LEOPARD] chess_piece_index:BLACK_LEOPARD x_index:2 y_index:2];
-    [self configPieceDatas:@"black_wolf" animal:[AnimateDatas WOLF] chess_piece_index:BLACK_WOLF x_index:4 y_index:2];
-    [self configPieceDatas:@"black_elephant" animal:[AnimateDatas ELEPHANT] chess_piece_index:BLACK_ELEPHANT x_index:6 y_index:2];
+//    [self configPieceDatas:@"black_dog" animal:[AnimateDatas DOG] chess_piece_index:BLACK_DOG x_index:1 y_index:1];
+//    [self configPieceDatas:@"black_cat" animal:[AnimateDatas CAT] chess_piece_index:BLACK_CAT x_index:5 y_index:1];
+//    [self configPieceDatas:@"black_mouse" animal:[AnimateDatas MOUSE] chess_piece_index:BLACK_MOUSE x_index:0 y_index:2];
+//    [self configPieceDatas:@"black_leopard" animal:[AnimateDatas LEOPARD] chess_piece_index:BLACK_LEOPARD x_index:2 y_index:2];
+//    [self configPieceDatas:@"black_wolf" animal:[AnimateDatas WOLF] chess_piece_index:BLACK_WOLF x_index:4 y_index:2];
+//    [self configPieceDatas:@"black_elephant" animal:[AnimateDatas ELEPHANT] chess_piece_index:BLACK_ELEPHANT x_index:6 y_index:2];
     
     
     [self configPieceDatas:@"red_lion" animal:[AnimateDatas LION] chess_piece_index:RED_LION x_index:6 y_index:8];
@@ -166,6 +175,14 @@
     [model revive];
     CGRect frame = model.frame;
     model.frame = frame;
+    if(chess_piece_index <= RED_ELEPHANT)
+    {
+        model.team = Red_Team;
+    }
+    else
+    {
+        model.team = Black_Team;
+    }
     [self.game_board_view addSubview:model.chessView];
 }
 
@@ -269,7 +286,7 @@
 /** 如果棋子在对手的巢穴中，给出一个棋子和目标X和Y坐标，则返回真。*/
 - (BOOL)inOpponentDen:(PieceModel *)cp x:(int)x y:(int)y
 {
-    BOOL inOtherDen = ([cp team] && x == 3 && y == 0) || (![cp team] && x == 3 && y == 8);
+    BOOL inOtherDen = ([cp team] == Red_Team && x == 3 && y == 0) || ([cp team] == Black_Team && x == 3 && y == 8);
     NSLog(@"if inOtherDen = YES in Opponent den. inOtherDen = %@", inOtherDen == YES ? @"YES" : @"NO");
     return inOtherDen;
 }
@@ -277,7 +294,7 @@
 /**如果棋子将在自己的巢穴中，给出一个棋子和目标X和Y坐标，则返回真。*/
 - (BOOL)inOwnDen:(PieceModel *) cp x:(int)x y:(int)y
 {
-    BOOL inOwnDen = (![cp team] && x == 3 && y == 0) || ([cp team] && x == 3 && y == 8);
+    BOOL inOwnDen = ([cp team] == Black_Team && x == 3 && y == 0) || ([cp team] == Red_Team && x == 3 && y == 8);
     NSLog(@"if inOwnDen = YES in self den. inOwnDen = %@", inOwnDen == YES ? @"YES" : @"NO");
     return inOwnDen;
 }
@@ -286,15 +303,20 @@
 - (BOOL)inTrap:(PieceModel *) cp x:(int)x y:(int)y
 {
     BOOL trap;
-    if ([cp team])
+    if([cp team] == Red_Team)
     {
-        NSLog(@"in self trap");
+        NSLog(@"in red trap");
         trap = (x == 2 && y == 0) || (x == 3 && y == 1) || (x == 4 && y == 0);
+    }
+    else if([cp team] == Black_Team)
+    {
+        NSLog(@"in black trap");
+        trap = (x == 2 && y == 8) || (x == 3 && y == 7) || (x == 4 && y == 8);
     }
     else
     {
-        NSLog(@"in opponent trap");
-        trap = (x == 2 && y == 8) || (x == 3 && y == 7) || (x == 4 && y == 8);
+        NSLog(@"not in trap");
+        trap = NO;
     }
     return trap;
 }
@@ -394,21 +416,15 @@
     {
         return NO;
     }
-    
     //如果将棋棋子放在对手的巢穴里，定胜为真
-    if ([self inOpponentDen:cur x:nextX y:nextY])
-    {
-//        this.win = true;
-    }
-    
     // 如果没有敌人的棋子活着，就把胜利定为真。
-//    for (int i = 0; i < self.chessPieceModels.count; i++)
-//    {
-//        if ([cur team] != [self.chessPieceModels[i] team] && [self.chessPieceModels[i] alive]) {
-//            break;
-//        }
-//        if (i == self.chessPieceModels.length - 1) this.win = true;
-//    }
+    int black_alive_nums = [self alives:Black_Team];
+    int red_alive_nums = [self alives:Red_Team];
+    if([self inOpponentDen:cur x:nextX y:nextY] ||
+       ((black_alive_nums == 0 && [cur team] == Red_Team) || (red_alive_nums == 0 && [cur team] == Black_Team)))
+    {
+        [self winTeam:[cur team]];
+    }
     // 移动块并从当前位置移除
     PieceModel *next_value = self.all_chess[nextX][nextY];
     [cur updatePosition:next_value];
@@ -418,6 +434,55 @@
     return YES;
 }
 
+- (void)winTeam:(Team)team
+{
+    NSString *message = @"恭喜黑队获胜！！！！！！";
+    if(team == Red_Team)
+    {
+        message = @"恭喜红队获胜！！！！！！";
+    }
+    [self showMessage:message];
+}
+- (int)alives:(Team)team
+{
+    int alive_nums = 0;
+    for (int i = 0; i < self.all_chess.count; i++)
+    {
+        NSMutableArray *models = self.all_chess[i];
+        for (PieceModel *model in models)
+        {
+            if ([model team] == team && [model alive])
+            {
+                alive_nums++;
+            }
+        }
+    }
+    return alive_nums;
+}
 
+- (void)showMessage:(NSString *)message
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+    [alert show];
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [self reset];
+}
+
+- (void)reset
+{
+    NSArray *subviews = [self.game_board_view subviews];
+    for (UIView *view in subviews) {
+        [view removeFromSuperview];
+    }
+    [self.all_chess removeAllObjects];
+    self.all_chess = nil;
+    self.all_chess = [self chessInBoard:self.game_board_view.bounds];
+    self.selected_x_index = -1;
+    self.selected_y_index = -1;
+    self.play_team = Red_Team;
+    [self createPieces];
+}
 
 @end

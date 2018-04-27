@@ -37,6 +37,7 @@
 {
     _alive = NO;
     [self.chessView removeFromSuperview];
+    self.chessView = nil;
 }
 
 - (void)revive

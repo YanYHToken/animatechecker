@@ -8,13 +8,21 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+
+typedef enum
+{
+    Red_Team = 0,
+    Black_Team = 1,
+    Unknow_Team = 2
+}Team;
+
 @interface PieceModel : NSObject
 
 @property(nonatomic, assign, readonly)BOOL alive;
 
 @property(nonatomic, copy)NSString *animal;
 
-@property(nonatomic, assign)BOOL team; // true if red, false if black
+@property(nonatomic, assign)Team team;
 
 @property(nonatomic, assign)CGRect frame;
 
