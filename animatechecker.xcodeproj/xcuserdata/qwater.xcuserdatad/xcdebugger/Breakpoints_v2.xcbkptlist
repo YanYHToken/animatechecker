@@ -10,28 +10,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "animatechecker/ViewController.m"
-            timestampString = "546430958.127367"
+            timestampString = "546512238.487795"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "7">
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "animatechecker/ViewController.m"
-            timestampString = "546430958.128644"
+            timestampString = "546512238.488531"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "-chessSelection:"
+            startingLineNumber = "289"
+            endingLineNumber = "289"
+            landmarkName = "-inTrap:x:y:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "animatechecker/ViewController.m"
-            timestampString = "546430958.129142"
+            timestampString = "546512238.489158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "-handleSingleTap:"
+            startingLineNumber = "308"
+            endingLineNumber = "308"
+            landmarkName = "-jumpException:curX:curY:nextX:nextY:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "animatechecker/ViewController.m"
-            timestampString = "546430958.129768"
+            timestampString = "546512238.489732"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "51"
@@ -74,11 +74,91 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "animatechecker/ViewController.m"
-            timestampString = "546430958.13032"
+            timestampString = "546512238.490383"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "335"
-            endingLineNumber = "335"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
+            landmarkName = "-accessible:curX:curY:nextX:nextY:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "animatechecker/ViewController.m"
+            timestampString = "546512238.491032"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
+            landmarkName = "-capture:curY:nextX:nextY:cur:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "animatechecker/ViewController.m"
+            timestampString = "546512238.4918801"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "-handleSingleTap:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ViewController handleSingleTap:]"
+                  moduleName = "animatechecker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/qwater/psCodes/animatechecker/animatechecker/ViewController.m"
+                  timestampString = "546512238.665169"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
+                  offsetFromSymbolStart = "1687">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ViewController handleSingleTap:]"
+                  moduleName = "animatechecker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/qwater/psCodes/animatechecker/animatechecker/ViewController.m"
+                  timestampString = "546512238.668697"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
+                  offsetFromSymbolStart = "1695">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "animatechecker/ViewController.m"
+            timestampString = "546512238.492993"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "372"
+            endingLineNumber = "372"
             landmarkName = "-movePiece:curY:nextX:nextY:"
             landmarkType = "7">
          </BreakpointContent>
@@ -89,13 +169,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "animatechecker/ViewController.m"
-            timestampString = "546430958.130932"
+            filePath = "animatechecker/PieceModel.m"
+            timestampString = "546512238.4940979"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
-            landmarkName = "-oneStepAway:curY:nextX:nextY:"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "-updatePosition:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -106,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "animatechecker/ViewController.m"
-            timestampString = "546430958.13125"
+            timestampString = "546512238.494242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "251"
-            endingLineNumber = "251"
+            startingLineNumber = "264"
+            endingLineNumber = "264"
             landmarkName = "-inRiver:y:"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "animatechecker/ViewController.m"
-            timestampString = "546430958.131559"
+            timestampString = "546512238.49482"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "257"
-            endingLineNumber = "257"
+            startingLineNumber = "272"
+            endingLineNumber = "272"
             landmarkName = "-inOpponentDen:x:y:"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "animatechecker/ViewController.m"
-            timestampString = "546430958.1318721"
+            timestampString = "546512238.495388"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "263"
-            endingLineNumber = "263"
+            startingLineNumber = "280"
+            endingLineNumber = "280"
             landmarkName = "-inOwnDen:x:y:"
             landmarkType = "7">
          </BreakpointContent>
@@ -154,28 +234,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "animatechecker/ViewController.m"
-            timestampString = "546430958.132303"
+            timestampString = "546512238.495935"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "269"
-            endingLineNumber = "269"
-            landmarkName = "-inTrap:x:y:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "animatechecker/ViewController.m"
-            timestampString = "546430958.133956"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "285"
-            endingLineNumber = "285"
-            landmarkName = "-jumpException:curX:curY:nextX:nextY:"
+            startingLineNumber = "256"
+            endingLineNumber = "256"
+            landmarkName = "-oneStepAway:curY:nextX:nextY:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

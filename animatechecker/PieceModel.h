@@ -18,26 +18,24 @@
 
 @property(nonatomic, assign)CGRect frame;
 
-@property(nonatomic, assign)int col_index;
+@property(nonatomic, assign)int y_index;
 
-@property(nonatomic, assign)int row_index;
+@property(nonatomic, assign)int x_index;
 
 @property(nonatomic, assign)int chess_piece_index;
 
 @property(nonatomic, copy)NSString *img_name;
 
-@property(nonatomic, strong)UIImage *img;
+@property(nonatomic, strong)UIImageView *chessView;
 
-+ (PieceModel *)modelWith:(NSString *)img_name
-                        animal:(NSString *)animal
-             chess_piece_index:(int)chess_piece_index
-                     col_index:(int)col_index
-                     row_index:(int)row_index;
-
-- (void)piecePosition:(NSValue *)value;
+- (void)modelWith:(NSString *)img_name animal:(NSString *)animal chess_piece_index:(int)chess_piece_index x_index:(int)x_index y_index:(int)y_index;
 
 - (void)capture;
 
 - (void)revive;
+
+- (void)updatePosition:(PieceModel *)model;
+
+- (void)selected:(BOOL)select;
 
 @end

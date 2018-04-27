@@ -10,21 +10,16 @@
 
 @implementation PieceModel
 
-+ (PieceModel *)modelWith:(NSString *)img_name
-                        animal:(NSString *)animal
-             chess_piece_index:(int)chess_piece_index
-                     col_index:(int)col_index
-                     row_index:(int)row_index
+- (void)modelWith:(NSString *)img_name animal:(NSString *)animal chess_piece_index:(int)chess_piece_index x_index:(int)x_index y_index:(int)y_index
 {
-    PieceModel *model = [[PieceModel alloc] init];
-    model.img_name = img_name;
-    model.animal = animal;
-    model.row_index = row_index;
-    model.col_index = col_index;
-    model.chess_piece_index = chess_piece_index;
-    model.team = model.chess_piece_index < 8;
+    self.img_name = img_name;
+    self.animal = animal;
+    self.x_index = x_index;
+    self.y_index = y_index;
+    self.chess_piece_index = chess_piece_index;
+    self.team = self.chess_piece_index < 8;
     NSLog(@"%@ was create", img_name);
-    return model;
+    self.chess_piece_index = chess_piece_index % 8;
 }
 
 - (instancetype)init
@@ -32,20 +27,16 @@
     self = [super init];
     if(self)
     {
-        _alive = YES;
+        _alive = NO;
     }
     return self;
 }
 
 
-- (void)piecePosition:(NSValue *)value
-{
-    self.frame = value.CGRectValue;
-}
-
 - (void)capture
 {
     _alive = NO;
+    [self.chessView removeFromSuperview];
 }
 
 - (void)revive
@@ -71,16 +62,50 @@
 - (void)setImg_name:(NSString *)img_name
 {
     _img_name = img_name;
-    self.img = [UIImage imageNamed:img_name];
+    self.chessView.image = [UIImage imageNamed:img_name];
 }
 
-- (int)chess_piece_index
+- (UIImageView *)chessView
 {
-    if(_chess_piece_index > 8)
+    if(!_chessView)
     {
-        return _chess_piece_index - 8;
+        _chessView = [[UIImageView alloc] init];
+        _chessView.frame = _frame;
+        _chessView.layer.borderWidth = 3;
+        _chessView.layer.borderColor = [UIColor clearColor].CGColor;
     }
-    return _chess_piece_index;
+    return _chessView;
+}
+
+- (void)updatePosition:(PieceModel *)model
+{
+    CGRect frame = self.frame;
+    int y_index = self.y_index;
+    int x_index = self.x_index;
+    self.x_index = model.x_index;
+    self.y_index = model.y_index;
+    self.frame = model.frame;
+    model.x_index = x_index;
+    model.y_index = y_index;
+    model.frame = frame;
+}
+
+- (void)setFrame:(CGRect)frame
+{
+    _frame = frame;
+    _chessView.frame = CGRectMake(frame.origin.x + 5, frame.origin.y + 5, frame.size.width-10, frame.size.height-10);
+}
+
+- (void)selected:(BOOL)select
+{
+    if(!select)
+    {
+        _chessView.layer.borderColor = [UIColor clearColor].CGColor;
+    }
+    else
+    {
+        _chessView.layer.borderColor = [UIColor blueColor].CGColor;
+    }
 }
 
 @end

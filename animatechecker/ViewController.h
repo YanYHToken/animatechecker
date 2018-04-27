@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-static int const COL_7 = 7;
-static int const ROW_9 = 9;
+static int const X_NUMS = 7;
+static int const Y_NUMS = 9;
 @interface ViewController : UIViewController
 
 @end
