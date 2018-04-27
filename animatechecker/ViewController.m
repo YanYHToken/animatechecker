@@ -144,12 +144,12 @@
 {
     [self configPieceDatas:@"black_lion" animal:[AnimateDatas LION] chess_piece_index:BLACK_LION x_index:0 y_index:0];
     [self configPieceDatas:@"black_tiger" animal:[AnimateDatas TIGER] chess_piece_index:BLACK_TIGER x_index:6 y_index:0];
-//    [self configPieceDatas:@"black_dog" animal:[AnimateDatas DOG] chess_piece_index:BLACK_DOG x_index:1 y_index:1];
-//    [self configPieceDatas:@"black_cat" animal:[AnimateDatas CAT] chess_piece_index:BLACK_CAT x_index:5 y_index:1];
-//    [self configPieceDatas:@"black_mouse" animal:[AnimateDatas MOUSE] chess_piece_index:BLACK_MOUSE x_index:0 y_index:2];
-//    [self configPieceDatas:@"black_leopard" animal:[AnimateDatas LEOPARD] chess_piece_index:BLACK_LEOPARD x_index:2 y_index:2];
-//    [self configPieceDatas:@"black_wolf" animal:[AnimateDatas WOLF] chess_piece_index:BLACK_WOLF x_index:4 y_index:2];
-//    [self configPieceDatas:@"black_elephant" animal:[AnimateDatas ELEPHANT] chess_piece_index:BLACK_ELEPHANT x_index:6 y_index:2];
+    [self configPieceDatas:@"black_dog" animal:[AnimateDatas DOG] chess_piece_index:BLACK_DOG x_index:1 y_index:1];
+    [self configPieceDatas:@"black_cat" animal:[AnimateDatas CAT] chess_piece_index:BLACK_CAT x_index:5 y_index:1];
+    [self configPieceDatas:@"black_mouse" animal:[AnimateDatas MOUSE] chess_piece_index:BLACK_MOUSE x_index:0 y_index:2];
+    [self configPieceDatas:@"black_leopard" animal:[AnimateDatas LEOPARD] chess_piece_index:BLACK_LEOPARD x_index:2 y_index:2];
+    [self configPieceDatas:@"black_wolf" animal:[AnimateDatas WOLF] chess_piece_index:BLACK_WOLF x_index:4 y_index:2];
+    [self configPieceDatas:@"black_elephant" animal:[AnimateDatas ELEPHANT] chess_piece_index:BLACK_ELEPHANT x_index:6 y_index:2];
     
     
     [self configPieceDatas:@"red_lion" animal:[AnimateDatas LION] chess_piece_index:RED_LION x_index:6 y_index:8];
